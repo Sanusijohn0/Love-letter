@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Love ❤️</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -15,6 +15,21 @@
         <button id="surpriseBtn">Click me 😘</button>
         <p id="hiddenMessage" class="hidden">Oops! You just clicked my heart! 💖 Now you have to take responsibility… and accept my unlimited love for you 😘</p>
     </div>
-    <script src="scripts/index.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+    let texts = document.querySelectorAll("h1, p");
+    texts.forEach((text, index) => {
+        setTimeout(() => {
+            text.style.opacity = "1";
+            text.style.transform = "translateY(0)";
+        }, 700 * index);
+    });
+
+    document.getElementById("surpriseBtn").addEventListener("click", function() {
+        document.getElementById("hiddenMessage").style.display = "block";
+    });
+});
+    </script>
 </body>
 </html>
